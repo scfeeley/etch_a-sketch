@@ -1,4 +1,4 @@
-live: https://scfeeley.github.io/etch_a_sketch/
+live: https://scfeeley.github.io/etch_a-sketch/
 
 Etch-A-Sketch
 
