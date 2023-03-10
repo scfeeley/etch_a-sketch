@@ -1,0 +1,85 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(198, 2, 2);
+}
+.square{
+    width: calc(min(5vw, 5vh, 31px));
+    height: calc(min(5vw, 5vh, 31px));
+    background:white;
+    border-left: black solid;
+    border-bottom: black solid;
+}
+h1{
+    text-align: center;
+    font-family: cursive;
+}
+.top{
+    border-top:black solid;
+}
+
+.right{
+    border-right: black solid;
+}
+.row{
+   display:flex;
+   flex-direction: row;
+}
+
+.grid{
+    display:flex;
+    flex-direction:column;
+    max-width: 500px;
+    max-height: 500px;
+    align-items: center;
+    margin:0 auto 10px auto;
+}
+input {
+    width: 50px; 
+}
+
+.tools{
+    border: black solid;
+    background:white;
+    margin: 5vh auto 5vh auto;
+    height: 100px;
+    width:50vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.clear{
+    background-color: white; 
+    color: rgb(198, 2, 2);
+}
+
+.size{
+    width: 30px;
+    margin: 10px auto 10px auto;
+}
+
+.circle{
+    background:black;
+    border-radius: 50%;
+    height: 15vw;
+    width: 15vw;
+    max-width: 150px;
+    max-height:150px;
+    display: block;
+    margin:20px;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+
+@media (max-width: 600px){
+    .tools{
+        max-width: 200px;
+    }
+}
