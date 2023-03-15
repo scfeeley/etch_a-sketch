@@ -1,20 +1,20 @@
 let drawing = false;
 let width = 16;
+let maxWidth = 50;
 /**********************************
 User Interface
  *********************************/
 const container = document.querySelector('.container');
 
-
 const grid = document.createElement('div');
 grid.classList.add('grid');
 let squares = [];
 let rows =[];
-for(let i = 0; i < width; i++){
+for(let i = 0; i < maxWidth; i++){
     squares.push([]);
     rows.push(document.createElement('div'));
     rows[i].classList.add('row');
-    for(let j = 0; j < width; j++){
+    for(let j = 0; j < maxWidth; j++){
       squares[i].push(document.createElement('div'));
       squares[i][j].classList.add('square');
       //if in first row add class top
@@ -24,6 +24,9 @@ for(let i = 0; i < width; i++){
       //if in last column add class right
       if(j + 1 === width){
         squares[i][j].classList.add('right');
+      }
+      if(j >= width || i >= width){
+        squares[i][j].classList.add('hide');
       }
       //If mouse down, start drawing
       squares[i][j].addEventListener('mousedown', ()=>{
@@ -58,6 +61,7 @@ colors.setAttribute('value', '#000000');
 colorSpan.appendChild(colors);
 tools.appendChild(colorSpan);
 
+/*Resize etch-a-sketch feature, not yet implemented 
 const sizeSpan = document.createElement('span');
 const size = document.createElement('input');
 sizeSpan.textContent ='Choose Grid Size: ';
@@ -69,6 +73,7 @@ size.classList.add('size');
 width = size.getAttribute('value');
 sizeSpan.appendChild(size);
 tools.appendChild(sizeSpan);
+*/
 
 const clearSpan = document.createElement('span');
 clearSpan.classList.add('clearSpan')
@@ -114,6 +119,10 @@ size.addEventListener('keypress', (e) =>{
     }else if(width > 50){
       alert('Must be a size between 16 and 50. Try Again.');
       size.value = 50;
+    }
+    let hidden = document.querySelectorAll('.hide');
+    for(let i = 0; i < hidden.length; i++){
+      hidden[i].classList.remove('hide');
     }
   }
 })

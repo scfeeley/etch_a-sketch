@@ -5,11 +5,16 @@ body{
     background-color: rgb(198, 2, 2);
 }
 .square{
+    height:calc(min(5vw, 5vh, 31px));
     width: calc(min(5vw, 5vh, 31px));
-    height: calc(min(5vw, 5vh, 31px));
     background:white;
     border-left: black solid;
     border-bottom: black solid;
+}
+.hide{
+    width: 0px;
+    height: 0px;
+    border: 0;
 }
 h1{
     text-align: center;
