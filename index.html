@@ -8,8 +8,28 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
+    <div class="page">
     <h1>Etch-A-Sketch</h1>
-    <div class='container'></div>
-    <script src="draw.js"></script>
+    <div class='container'>
+        <div id ='grid' class="drawing">
+        </div>
+        <div class="bottom">
+            <div class="left circle"></div>
+            <div class="tools">
+                <span id="color_wheel">
+                    Pick a Color
+                    <input id='colors' type="color" value="000000">
+                </span>
+                <span id='size_container'>
+                    <input id="size" type="number" value="16">
+                    <button class="resize" id="resize">resize</button>
+                </span>
+                <button class="clear" id="clear">clear</button>
+            </div>
+            <div class="right circle"></div>
+        </div>
+    </div>
+    <script src="draw_any_size.js"></script>
+    </div>
 </body>
 </html>

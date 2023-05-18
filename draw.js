@@ -4,7 +4,8 @@ let maxWidth = 50;
 /**********************************
 User Interface
  *********************************/
-const container = document.querySelector('.container');
+//const container = document.querySelector('.container');
+const container = document.querySelector('.drawing');
 
 const grid = document.createElement('div');
 grid.classList.add('grid');
@@ -49,11 +50,13 @@ container.appendChild(grid)
 
 
 //create toolbar
-const tools = document.createElement('div');
-tools.classList.add('tools');
+//const tools = document.createElement('div');
+//tools.classList.add('tools');
 
-const colorSpan = document.createElement('span');
-colorSpan.textContent = 'Pick a Color: '
+//const colorSpan = document.createElement('span');
+//colorSpan.textContent = 'Pick a Color: '
+
+const colorSpan=document.getElementById('color_wheel');
 
 const colors = document.createElement('input');
 colors.setAttribute('type', 'color');
@@ -61,7 +64,7 @@ colors.setAttribute('value', '#000000');
 colorSpan.appendChild(colors);
 tools.appendChild(colorSpan);
 
-/*Resize etch-a-sketch feature, not yet implemented 
+/*Resize etch-a-sketch feature, not yet implemented
 const sizeSpan = document.createElement('span');
 const size = document.createElement('input');
 sizeSpan.textContent ='Choose Grid Size: ';
@@ -75,11 +78,15 @@ sizeSpan.appendChild(size);
 tools.appendChild(sizeSpan);
 */
 
+/*
 const clearSpan = document.createElement('span');
 clearSpan.classList.add('clearSpan')
 const clear = document.createElement('button');
 clear.classList.add('clear');
 clear.textContent = 'clear';
+*/
+
+const clear = document.getElementById('clear');
 clear.addEventListener('click', () =>{
   let changed = document.querySelectorAll('.select');
   for (let i = 0; i < changed.length; i++) {
@@ -87,12 +94,20 @@ clear.addEventListener('click', () =>{
     changed[i].style.backgroundColor ='white';
   }
 });
+/*
 clearSpan.appendChild(clear);
 tools.appendChild(clearSpan);
+*/
+/*const resize = document.createElement('button');
+resize.classList.add('resize');
+resize.textContent = 'resize';
+resize.addEventListener('click', () =>{
+
+})*/
 
 
-
-//create knobs 
+/*
+//create knobs
 const leftKnob =document.createElement('div');
 leftKnob.classList.add('circle');
 leftKnob.classList.add('left');
@@ -104,6 +119,7 @@ rightKnob.classList.add('right');
 container.appendChild(leftKnob);
 container.appendChild(rightKnob);
 container.append(tools);
+*/
 
 //If mouse up anywhere on page, stop drawing
 document.addEventListener('mouseup', ()=>{
